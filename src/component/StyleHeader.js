@@ -1,70 +1,106 @@
 import styled from "styled-components";
 import Fundo from "../img/FundoPrinc.png";
+import Menu from "../img/menu.png";
 
-export const Header = styled.div`
-  margin: 10px;
-  color: #373737;
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-decoration: uppercase;
-
-  background-image: url(${Fundo});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 600px;
-
-  div {
-    width: 99%;
+export const Container = styled.header`
+    width: 100%;
+    height: 864px;
     display: flex;
-    justify-content: space-around;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 300px;
-  }
-  ul {
-    list-style: none;
-    width: 85%;
+    `
+export const Box = styled.div`
+    background-image: url(${Recipes});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 96%;
+    height: 96%;
+
+    h1{
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      font-size: 5.5rem;
+
+      width: 100%;
+    } 
+    @media only screen and (min-width: 360px) and (max-width: 800px){  
+        background-position: right;
+        h1{
+            font-size: 2rem;
+        }
+        div{
+            width: 100%;
+        }
+        figure{
+            width: 3rem;
+            height: 3rem;
+            margin-left: 85%;
+            background-image: url(${MenuHamburguer});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+}
+    @media only screen and (min-width: 412px) and (max-width: 780px){
+        background-position: right;
+        h1{
+            font-size: 2rem;
+        }
+        div{
+            width: 100%;
+        }
+        figure{
+            width: 3rem;
+            height: 3rem;
+            margin-left: 85%;
+            background-image: url(${MenuHamburguer});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+}
+`
+export const BoxMenu = styled.div`
+position: absolute;
+    height: 20vh;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-right: 8%;
-    margin-left: -20%;
-    align-items: center;
-  }
-  li {
-    margin: 5%;
-  }
-  button {
-    margin-right: 15%;
-    padding: 8px;
-    background-color: transparent;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-  }
-  h2 {
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-size: 6rem;
-    letter-spacing: 6px;
-  }
-  section {
-    width: 30%;
+    @media only screen and (min-width: 360px) and (max-width: 800px){  
+        display: none;
+}
+    @media only screen and (min-width: 412px) and (max-width: 780px){
+        display: none;
+}
+`
+export const MenuLeft = styled.div`
+margin: 2rem;
+`
+export const MenuRight = styled.div`
+    width: 40%;
     display: flex;
-    justify-content: space-between;
-  }
 
-  @media (max-width: 1000px) {
-    h1 {
-      display: none;
+    align-items: center;
+    ul{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
     }
-    section {
-      display: none;
+    li{
+        font-size: 1.5rem;
+        transition: all 1s;
+    
+    &:hover{
+        text-decoration: none;
+        transform: scale(1.1);
+        cursor: pointer;
+        color: black;
+        font-weight: 600;
+        border: solid;
     }
-    h2 {
-      font-size: 2rem;
-    }
-  }
-`;
+}
+`
